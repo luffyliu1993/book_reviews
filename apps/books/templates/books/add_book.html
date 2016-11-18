@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="utf-8">
+        <title>Adding a Book</title>
+    </head>
+    <body>
+        <p>
+            <a href='/books'>Home</a>
+        </p>
+        <p>
+            <a href='/logout'>Logout</a>
+        </p>
+        <h1>Add a New Book Title and a Review:</h1>
+        <form action='/receive_book_info' method="POST">
+            {% csrf_token %}
+            <label>
+                Book Title: <input type='text' name='book_title' />
+            </label>
+            <h5>Author: </h5>
+            <label>
+                Choose from the list:
+                <select name='selected_author_name'>
+                    <option>
+                        None
+                    </option>
+                </select>
+            </label>
+            <label>
+                Or add a new author: <input type='text' name='entered_author_name' />
+            </label>
+            <h5>Review:</h5>
+            <textarea name='review'></textarea>
+            <h5>Rating Stars: </h5>
+            <select name='rating'>
+                <option>
+                    1
+                </option>
+                <option>
+                    2
+                </option>
+                <option>
+                    3
+                </option>
+                <option>
+                    4
+                </option>
+                <option>
+                    5
+                </option>
+            </select>
+            <input type='submit' value='Add Book and Review' />
+        </form>
+    </body>
+</html>

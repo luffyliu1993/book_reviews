@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="utf-8">
+        <title>Books Page</title>
+    </head>
+    <body>
+        <h3>Welcome, {{first_name}}</h3>
+        <h4><a href='/books/add'>Add Book and Review</a></h4>
+        <h4><a href='/logout'>Logout</a></h4>
+        <h1>Recent Book Reviews:</h1>
+        <div>
+            {% for review in reviews %}
+                <p>
+                    {{review.book.title}}
+                </p>
+                <p>
+                    {{review.user.first_name}} says: {{review.review}}
+                </p>
+                <p>
+                    Posted on {{review.created_at}}
+                </p>
+            {% endfor %}
+        </div>
+        <h3>Other Books with Reviews</h3>
+        {% for book in books %}
+            <p>
+                {{book.title}}
+            </p>
+        {% endfor %}
+    </body>
+</html>

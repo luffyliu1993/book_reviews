@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head lang='en'>
+        <meta charset="utf-8">
+        <title>Showing Book with Reviews</title>
+    </head>
+    <body>
+        <p>
+            {{book.title}}
+        </p>
+        <p>
+            Author: {{book.author.name}}
+        </p>
+        <div>
+            <h3>Reviews: </h3>
+            {% for review in reviews %}
+                <p>
+                    Rating: {{review.rating}}
+                </p>
+                <p>
+                    {{review.user.first_name}} says: {{review.review}}
+                </p>
+                <p>
+                    Posted on {{review.created_at}}
+                </p>
+            {% endfor %}
+        </div>
+        <h3>Add a Review</h3>
+        <form action='/add_review/{{book.id}}' method="post">
+            {% csrf_token %}
+            <textarea name='review'></textarea>
+            <label>
+                Rating:
+                <select name='rating'>
+                    <option>
+                        1
+                    </option>
+                    <option>
+                        2
+                    </option>
+                    <option>
+                        3
+                    </option>
+                    <option>
+                        4
+                    </option>
+                    <option>
+                        5
+                    </option>
+                </select>
+            </label>
+            <input type='submit' value='Submit' />
+        </form>
+    </body>
+</html>

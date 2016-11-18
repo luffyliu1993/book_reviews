@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#container{
+    width: 600px;
+    margin: 0 auto;
+}
+    form {
+        position: relative;
+    }
+        form h1{
+            font-weight: bolder;
+            font-size: 22pt;
+        }
+        form label{
+            display: block;
+            margin-bottom: 10px;
+        }
+        .text{
+            position: absolute;
+            left: 20%;
+        }
+        label input{
+            border: 2px solid black;
+            width: 250px;
+        }
+        textarea{
+            border: 2px solid black;
+            width: 250px;
+            height: 130px;
+            overflow-y: auto;
+        }
+        input#button{
+            background-color: green;
+            text-align: center;
+            color: white;
+            width: 40px;
+            margin-left: 335px;
+            display: block;
+            margin-top: 130px;
+        }
+        #course{
+            display: block;
+            font-weight: bolder;
+            font-size: 18pt;
+        }
+        .table{
+            width: 800px;
+            border-collapse: collapse;
+        }
+.error{
+    color: red;
+    border-bottom: 2px solid black;
+    margin-top: 10px;
+}
